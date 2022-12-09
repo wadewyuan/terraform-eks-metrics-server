@@ -12,6 +12,13 @@ terraform {
       version = ">= 2.0.1"
     }
   }
+
+  backend "s3" {
+    bucket         = "terraform-wy"
+    key            = "terraform-kubernetes-metrics-server"
+    region         = "us-west-2"
+    dynamodb_table = "dynamodb-state-locking"
+  }
 }
 
 # Get terraform state from the EKS cluster provision project
