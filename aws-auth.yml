@@ -1,0 +1,4 @@
+- userarn: arn:aws:iam::184083701473:user/DevAdmin
+    username: DevAdmin
+    groups:
+      - system:masters
