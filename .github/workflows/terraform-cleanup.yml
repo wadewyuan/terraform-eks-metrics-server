@@ -45,4 +45,4 @@ jobs:
         with:
           token: ${{ secrets.PAT }}
           event-type: eks-metrics-server-destroyed
-          repository: wadewyuan/learn-terraform-provision-eks-cluster
+          repository: wadewyuan/terraform-provision-eks-cluster
