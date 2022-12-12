@@ -40,3 +40,9 @@ jobs:
       # Checks that all Terraform configuration files adhere to a canonical format
       - name: Terraform Destroy
         run: terraform destroy -auto-approve -input=false
+      - name: Dispatch Event
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PAT }}
+          event-type: eks-metrics-server-destroyed
+          repository: wadewyuan/learn-terraform-provision-eks-cluster
