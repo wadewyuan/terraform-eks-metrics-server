@@ -2,7 +2,3 @@
   username: DevAdmin
   groups:
     - system:masters
-- userarn: arn:aws:iam::184083701473:user/DevRestricted
-  username: DevRestricted
-  groups:
-    - system:masters
