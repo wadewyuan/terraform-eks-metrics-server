@@ -44,7 +44,10 @@
 
 name: 'Terraform'
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  repository_dispatch:
+    types: [eks-cluster-launched]
 
 permissions:
   id-token: write # required to use OIDC authentication
@@ -95,3 +98,8 @@ jobs:
     - name: Terraform Apply
       #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
+    - name: Dispatch Event
+      uses: peter-evans/repository-dispatch@v2
+      with:
+        token: ${{ secrets.PAT }}
+        event-type: eks-metrics-server-is-ready
